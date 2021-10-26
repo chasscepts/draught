@@ -11,7 +11,7 @@ const styles = {
   cell: (x, y) => {
     let bg;
     if (x === y) {
-      bg = 'red';
+      bg = '#701c1c';
     } else if ((x % 2 !== 0 && y % 2 === 0) || (x % 2 === 0 && y % 2 !== 0)) {
       bg = '#e8c797';
     } else {

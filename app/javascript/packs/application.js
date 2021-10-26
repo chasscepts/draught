@@ -16,3 +16,7 @@ require('../index');
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+if (module.hot) {
+  module.hot.accept('../index.js');
+}

@@ -41,11 +41,13 @@ module.exports = function(api) {
         '@babel/preset-react',
         {
           development: isDevelopmentEnv || isTestEnv,
-          useBuiltIns: true
+          useBuiltIns: true,
+          runtime: 'automatic',
         }
       ]
     ].filter(Boolean),
     plugins: [
+      isDevelopmentEnv && 'react-refresh/babel',
       'babel-plugin-macros',
       '@babel/plugin-syntax-dynamic-import',
       isTestEnv && 'babel-plugin-dynamic-import-node',
@@ -81,7 +83,9 @@ module.exports = function(api) {
         {
           removeImport: true
         }
-      ]
+      ],
+      ["@babel/plugin-proposal-private-property-in-object", { "loose": true }],
+      ["@babel/plugin-proposal-private-methods", { "loose": true }]
     ].filter(Boolean)
   }
 }
