@@ -5,6 +5,4 @@ const environment = require('./environment');
 
 const config = environment.toWebpackConfig();
 
-fastRefresh.configure(config);
-
-module.exports = config;
+module.exports = fastRefresh.configure(config);
