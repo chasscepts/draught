@@ -3,7 +3,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 module.exports = {
   configure: (config) => {
     const clone = { ...config };
-    const { devServer, client } = clone.devServer;
+    const { devServer } = clone.devServer;
     devServer.liveReload = false;
 
     // Webpacker is using an old configuration for the dev-server,
