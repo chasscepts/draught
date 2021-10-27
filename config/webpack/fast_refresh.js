@@ -22,14 +22,14 @@ module.exports = {
     delete devServer.quiet;
     delete devServer.disableHostCheck;
 
-    let static = devServer.static;
-    if (!static) {
-      static = {};
-      devServer.static = static;
+    let staticProperty = devServer.static;
+    if (!staticProperty) {
+      staticProperty = {};
+      devServer.static = staticProperty;
     }
-    static.directory = devServer.contentBase;
+    staticProperty.directory = devServer.contentBase;
     delete devServer.contentBase;
-    static.publicPath = devServer.publicPath;
+    staticProperty.publicPath = devServer.publicPath;
     delete devServer.publicPath;
 
     delete devServer.inline;

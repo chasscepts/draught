@@ -7,4 +7,4 @@ const config = environment.toWebpackConfig();
 
 fastRefresh.configure(config);
 
-module.exports = config;  // environment.toWebpackConfig();
+module.exports = config;
