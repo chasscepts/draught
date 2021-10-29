@@ -1,0 +1,40 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.innerWrap {
+  position: relative;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.h2 {
+  color: #62b5e5,
+}
+
+.controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link {
+  color: #62b5e5;
+  text-decoration: underline;
+}
+
+.error {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  padding: 15px 0;
+}

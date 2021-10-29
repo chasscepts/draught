@@ -1,0 +1,24 @@
+.btn {
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1;
+  border-radius: 4px;
+  box-shadow: 0 3px 9px rgb(0 0 0 / 5%);
+  transition: all 180ms;
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  background-color: #62b5e5;
+  border-width: 0;
+  cursor: pointer;
+}
+
+.busy {
+  display: flex;
+  justify-content: center;
+  padding: 10px 15px;
+  cursor: default;
+}

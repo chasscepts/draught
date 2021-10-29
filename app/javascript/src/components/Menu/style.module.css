@@ -1,0 +1,30 @@
+.aside {
+  padding: 3px;
+  margin: 1px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background-color: #212226;
+}
+
+.sideLink {
+  border: none;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 10px 0;
+}
+
+.sideLink:first-child {
+  margin-top: 2px;
+}
+
+.sideLink img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

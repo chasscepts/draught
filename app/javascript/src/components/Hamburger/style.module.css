@@ -1,0 +1,71 @@
+.wrap {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger{
+  position: relative;
+  width: 16px;
+  height: 16px;
+  outline: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.hamburger > span{
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: beige;
+  left: 0;
+  bottom: 8px;
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburger::before{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: beige;
+  left: 0;
+  bottom: 2px;
+  transform-origin: center;
+  transition: bottom 0.3s 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hamburger::after{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: beige;
+  left: 0;
+  bottom: 14px;
+  transform-origin: center;
+  transition: bottom 0.3s 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hamburger.open > span{
+  opacity: 0;
+}
+
+.hamburger.open::before{
+  background-color: #850b07;
+  bottom: 10px;
+  transform: rotate(-45deg);
+  transition: bottom 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+}
+
+.hamburger.open::after{
+  background-color: #850b07;
+  bottom: 10px;
+  transform: rotate(45deg);
+  transition: bottom 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+}

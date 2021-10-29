@@ -3,7 +3,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 module.exports = {
   configure: (config) => {
     const clone = { ...config };
-    const { devServer } = clone.devServer;
+    const { devServer } = clone;
     devServer.liveReload = false;
 
     // Webpacker is using an old configuration for the dev-server,
@@ -39,34 +39,60 @@ module.exports = {
     delete devServer.watchOptions;
     clone.stats = devServer.stats;
     delete devServer.stats;
-    devServer.watchFiles = ['app/javascript/components/*'];
+    devServer.watchFiles = ['app/javascript/src/*'];
 
     //  Add react-refresh-plugin to the plugins
     clone.plugins.push(new ReactRefreshWebpackPlugin());
 
-    //  Add babel-loader to the loaders for react files.
-    let obj = clone.module;
-    if (!obj) {
-      clone.module = {};
-      obj = clone.module;
-    }
-    obj = obj.rules;
-    if (!obj) {
-      clone.module.rules = [];
-      obj = clone.module.rules;
-    }
-    obj.unshift({
-      test: /\.[jt]sx?$/,
-      exclude: /node_modules/,
-      use: [
+    clone.module = {
+      rules: [
         {
-          loader: require.resolve('babel-loader'),
-          options: {
-            plugins: [require.resolve('react-refresh/babel')],
-          },
+          test: /\.[jt]sx?$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: require.resolve('babel-loader'),
+              options: {
+                plugins: [require.resolve('react-refresh/babel')],
+              },
+            },
+          ],
+        },
+        {
+          test: /\.css$/,
+          use: ["style-loader", "css-loader"],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
         },
       ],
-    });
+    };
+
+    //  Add babel-loader to the loaders for react files.
+    // let obj = clone.module;
+    // console.log(obj);
+    // if (!obj) {
+    //   clone.module = {};
+    //   obj = clone.module;
+    // }
+    // obj = obj.rules;
+    // if (!obj) {
+    //   clone.module.rules = [];
+    //   obj = clone.module.rules;
+    // }
+    // obj.unshift({
+    //   test: /\.[jt]sx?$/,
+    //   exclude: /node_modules/,
+    //   use: [
+    //     {
+    //       loader: require.resolve('babel-loader'),
+    //       options: {
+    //         plugins: [require.resolve('react-refresh/babel')],
+    //       },
+    //     },
+    //   ],
+    // });
 
     //  value given in the node property is no longer valid.
     delete clone.node;
