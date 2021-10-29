@@ -1,0 +1,17 @@
+example_id                                       | status | run_time        |
+------------------------------------------------ | ------ | --------------- |
+./spec/models/user_spec.rb[1:1]                  | passed | 0.019 seconds   |
+./spec/models/user_spec.rb[1:2]                  | passed | 0.051 seconds   |
+./spec/models/user_spec.rb[1:3]                  | passed | 0.03 seconds    |
+./spec/requests/authentication_spec.rb[1:1:1]    | passed | 0.042 seconds   |
+./spec/requests/authentication_spec.rb[1:1:2]    | passed | 0.02 seconds    |
+./spec/requests/authentication_spec.rb[1:1:3]    | passed | 0.032 seconds   |
+./spec/requests/authentication_spec.rb[1:2:1]    | passed | 0.11401 seconds |
+./spec/requests/registrations_spec.rb[1:1:1:1]   | passed | 0.023 seconds   |
+./spec/requests/registrations_spec.rb[1:1:1:2]   | passed | 0.025 seconds   |
+./spec/requests/registrations_spec.rb[1:1:1:3]   | passed | 0.02 seconds    |
+./spec/requests/registrations_spec.rb[1:1:1:4]   | passed | 0.603 seconds   |
+./spec/requests/registrations_spec.rb[1:1:2:1:1] | passed | 0.03 seconds    |
+./spec/requests/registrations_spec.rb[1:1:2:1:2] | passed | 0.038 seconds   |
+./spec/requests/registrations_spec.rb[1:1:2:2:1] | passed | 0.02 seconds    |
+./spec/requests/registrations_spec.rb[1:1:2:2:2] | passed | 4.08 seconds    |
