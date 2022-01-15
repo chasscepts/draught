@@ -1,4 +1,5 @@
 import React from 'react';
+import Drawer from '../Drawer';
 import style from './style.module.css';
 
 const cellBg = (x, y) => {
@@ -27,7 +28,10 @@ const App = () => {
 
   return (
     <div className={style.container}>
-      {cells.map((cell) => <div className={style.cell} style={cellBg(cell.row, cell.col) } key={cell.name} />)}
+      <div className={style.board}>
+        {cells.map((cell) => <div className={style.cell} style={cellBg(cell.row, cell.col) } key={cell.name} />)}
+      </div>
+      <Drawer />
     </div>
   );
 };

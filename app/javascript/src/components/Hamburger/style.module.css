@@ -57,14 +57,14 @@
 }
 
 .hamburger.open::before{
-  background-color: #850b07;
+  background-color: #d92620;
   bottom: 10px;
   transform: rotate(-45deg);
   transition: bottom 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
 }
 
 .hamburger.open::after{
-  background-color: #850b07;
+  background-color: #d92620;
   bottom: 10px;
   transform: rotate(45deg);
   transition: bottom 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;

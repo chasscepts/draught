@@ -21,9 +21,11 @@ export default function RegistrationPage() {
   const dispatch = useDispatch();
 
   if (user) {
+    console.log(user);
     return <Redirect to="/" />;
   }
   if (success) {
+    console.log('Success');
     setTimeout(() => dispatch(setRegistrationSuccess(false)), 0);
     return <Redirect to="/login" />;
   }

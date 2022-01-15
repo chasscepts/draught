@@ -8,7 +8,16 @@ const normalizeError = (err) => {
     return { message: 'An unknown error encountered. Please try again.' };
   }
   if (err.response) {
-    return { message: err.response.data.message || JSON.stringify(err.response.data) };
+    const data = err.response.data;
+    if (data) {
+      if (typeof data === 'string') {
+        return { message: data };
+      }
+      if (data.message) {
+        return { message: data.message };
+      }
+      return { message: JSON.stringify(data) };
+    }
   }
   if (err.request) {
     return { message: 'Server is not responding.' };
@@ -22,12 +31,14 @@ const normalizeError = (err) => {
   return { message: 'An unknown error encountered. Please try again.' };
 };
 
-const instantiate = (token) => {
+const instantiate = (token = null) => {
   const instance = axios.create({
     baseURL,
     responseType: 'json',
   });
-  instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+  if (token) {
+    instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+  }
 
   return instance;
 };
@@ -97,3 +108,17 @@ export const register = (email, username, password) => {
   });
   return post(instance, '/auth/register', { email, username, password });
 };
+
+export const loadFriends = (token) => get(instantiate(token), `api/v1/friends`);
+
+export const loadPendingRequests = (token) => get(instantiate(token), `api/v1/friends/pending`);
+
+export const loadSuggestions = (page) => get(instantiate(), `api/v1/friends/suggestions?page=${page}`);
+
+export const loadUsers = (page) => get(instantiate(), `api/v1/friends/users?page=${page}`);
+
+export const sendInvite = (token, id) => post(instantiate(token), 'api/v1/invite', { id });
+
+export const confirmFriend = (token, id) => put(instantiate(token), 'api/v1/invite', { id });
+
+export const rejectFriend = (token, id) => destroy(instantiate(token), `api/v1/invite/${id}`);

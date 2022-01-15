@@ -1,0 +1,81 @@
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.header {
+  display: flex;
+}
+
+.headerBtn {
+  border-width: 0 0 2px 0;
+  border-color: transparent;
+  outline: none;
+  background-color: transparent;
+  padding: 7px 15px;
+}
+
+.headerBtn.active {
+  border-color: teal;
+}
+
+.tabs {
+  flex: 1;
+  overflow: hidden;
+}
+
+.loginPrompt {
+  line-height: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 1px gray;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.loginPrompt span {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.centeredText {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a2877;
+}
+
+.list {
+  list-style: none;
+  padding: 5px 15px 15px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  width: 80px;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin: 0 15px;
+}
+
+.green {
+  color: #137e07;
+}
+
+.red {
+  color: red;
+}

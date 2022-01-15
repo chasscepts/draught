@@ -1,0 +1,58 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.closeBtn {
+  background-color: transparent;
+  outline: none;
+  position: relative;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.closeBtn::after,
+.closeBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: #770606;
+}
+
+.closeBtn::after {
+  transform: rotate(-45deg);
+}
+
+.closeBtn::before {
+  transform: rotate(45deg);
+}
+
+.display {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 40px 15px 15px;
+}
+
+.iframeWrap {
+  padding-top: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+}

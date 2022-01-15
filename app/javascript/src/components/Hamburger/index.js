@@ -21,9 +21,7 @@ const Hamburger = () => {
   }
 
   return (
-    <div className={style.wrap}>
-      <button className={className} type="button" onClick={handleClick}><span /></button>
-    </div>
+    <button className={className} type="button" onClick={handleClick}><span /></button>
   );
 }
 

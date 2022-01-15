@@ -7,6 +7,7 @@ class AuthenticationController < ApiController
       res = {
         id: user.id,
         email: user.email,
+        username: user.username,
         token: JsonWebToken.encode(sub: user.id)
       }
       json_response(res, :created)
@@ -19,6 +20,7 @@ class AuthenticationController < ApiController
     user = {
       id: current_user.id,
       email: current_user.email,
+      username: current_user.username,
       token: JsonWebToken.encode(sub: current_user.id)
     }
     json_response(user)

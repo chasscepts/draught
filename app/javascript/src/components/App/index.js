@@ -6,7 +6,9 @@ import store from '../../app/store';
 import Draught from '../Draught';
 import LoginPage from '../LoginPage';
 import RegistrationPage from '../RegistrationPage';
+import Friends from '../Friends';
 import Menu from '../Menu';
+import Feedback from '../FeedBack';
 
 const App = () => (
   <React.StrictMode>
@@ -18,9 +20,11 @@ const App = () => (
               <Route exact path="/" component={Draught} />
               <Route path="/login" component={LoginPage} />
               <Route path="/register" component={RegistrationPage} />
+              <Route path="/friends" component={Friends} />
             </Switch>
           </main>
           <Menu />
+          <Feedback />
         </div>
       </BrowserRouter>
     </Provider>

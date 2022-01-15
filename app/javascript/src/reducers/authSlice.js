@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { login, register } from '../api';
+import { pushFeedback } from './feedbackSlice';
 
 /* eslint-disable no-param-reassign */
 const authSlice = createSlice({
@@ -75,8 +76,15 @@ export const loginAsyn = (email, password) => (dispatch, getState) => {
 
 export const registerAsync = (email, username, password) => (dispatch) => {
   register(email, username, password)
-    .then(() => dispatch(setRegistrationSuccess(true)))
-    .catch(({ message }) => dispatch(setRegistrationError(message)));
+    .then((user) => {
+      // dispatch(setRegistrationSuccess(true));
+      //  dispatch(pushFeedback(user));
+      console.log(user);
+    })
+    .catch(({ message }) => {
+      dispatch(setRegistrationError(message));
+      dispatch(pushFeedback(message));
+    });
 };
 
 export const selectUser = (state) => state.auth.user;
